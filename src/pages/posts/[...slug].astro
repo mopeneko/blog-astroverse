@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import OptimizedCover from "@components/OptimizedPicture.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -26,7 +27,7 @@ const { Content } = await post.render();
         <div>
           {
             post.data.cover && (
-              <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
+              <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />
             )
           }
         </div>

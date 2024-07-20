@@ -2,60 +2,49 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Base Page Metadata, src/layouts/BaseLayout.astro
-export const BRAND_NAME = "AstroVerse";
-export const SITE_TITLE = "AstroVerse";
-export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
+export const BRAND_NAME = "もぺ";
+export const SITE_TITLE = "もぺブログ";
+export const SITE_DESCRIPTION = "技術系解説ブログ";
 
 // Tags Page Metadata, src/pages/tags/index.astro
-export const Tags_TITLE = "AstroVerse - All Tags";
+export const Tags_TITLE = `タグ - ${SITE_TITLE}`;
 export const Tags_DESCRIPTION =
-  "AstroVerse - All tags and the count of articles related to each tag";
+  `${SITE_TITLE}の全タグとそれぞれのタグの記事数`;
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in AstroVerse`,
-    description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
+    title: `${tag}タグの全記事 - ${SITE_TITLE}`,
+    description: `${SITE_TITLE}の${tag}カテゴリの全記事`,
   };
 }
 
 // Category Page Metadata, src/pages/category/[category]/[page].astro
 export function getCategoryMetadata(category: string) {
   return {
-    title: `All articles in '${category}' category in AstroVerse`,
-    description: `Browse all articles under the ${category} category in AstroVerse`,
+    title: `${category}カテゴリの全記事 - ${SITE_TITLE}`,
+    description: `${SITE_TITLE}の${category}カテゴリの全記事`,
   };
 }
 
 // Header Links, src/components/Header.astro
-export const HeaderLinks = [
-  { href: "/category/One/1/", title: "One" },
-  { href: "/category/Two/1/", title: "Two" },
-  { href: "/category/Three/1/", title: "Three" },
-];
+export const HeaderLinks = [];
 
 // Footer Links, src/components/Footer.astro
 export const FooterLinks = [
-  { href: "/posts/why-astro/", title: "Astro" },
-  { href: "/posts/tailwind-typography/", title: "Tailwind" },
-  { href: "/tags/", title: "Tags" },
+  { href: "/tags/", title: "タグ" },
 ];
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
   { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://twitter.com/astrodotbuild",
-    icon: "tabler:brand-twitter",
-    label: "Twitter",
-  },
-  {
-    href: "https://github.com/isooosi",
-    icon: "tabler:brand-github",
-    label: "GitHub",
+    href: "https://nostree.me/npub1tehcg89zc3ynfewfq8xvn69dxxvymtyel27unmj4xzvj3d7y8p7qe783a6",
+    icon: "ph:link",
+    label: "Nostree",
   },
 ];
 
 // Search Page Metadata, src/pages/search.astro
-export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
-export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
+export const SEARCH_PAGE_TITLE = `検索 - ${SITE_TITLE}`;
+export const SEARCH_PAGE_DESCRIPTION = `${SITE_TITLE}の全記事を検索`;
