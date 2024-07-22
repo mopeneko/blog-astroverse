@@ -47,14 +47,14 @@ const { title, description, image = "/blog-placeholder-1.avif" } = Astro.props;
 </script>
 
 <!-- Google AdSense -->
-<script is:inline type="text/partytown" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3857753364740983"></script>
+<script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3857753364740983" crossorigin="anonymous"></script>
 
 <!-- Google tag (gtag.js) -->
 <script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-DB7G8H3V1H"></script>
 
 <script is:inline type="text/partytown">
   partytown = {
-    forward: ["dataLayer.push", "adsbygoogle.push"],
+    forward: ["dataLayer.push"],
   }
 </script>
 
