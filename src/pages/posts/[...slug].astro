@@ -5,6 +5,7 @@ import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import OptimizedCover from "@components/OptimizedPicture.astro";
 import { Image } from "astro:assets";
+import Share from "@components/Share.vue";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -50,6 +51,7 @@ const { Content } = await post.render();
             /></small
           >
         </div>
+        <Share client:visible src={Astro.url} title={post.data.title} />
     </article>
     <div class="mt-4">
       <RelatedPostsCard
