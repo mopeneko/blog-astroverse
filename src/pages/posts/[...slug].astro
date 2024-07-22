@@ -42,7 +42,7 @@ const { Content, headings } = await post.render();
               <ul role="list" class="list-decimal not-prose list-inside">
                 {headings.map((heading) => {
                   if (heading.depth === 2) {
-                    return <li><a href={heading.slug} class="underline">{heading.text}</a></li>
+                    return <li><a href={`#${heading.slug}`} class="underline">{heading.text}</a></li>
                   }
                 })}
               </ul>
