@@ -1,0 +1,17 @@
+name: n8n
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/content/posts/**'
+
+jobs:
+  send-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+            for file in $(git diff ${{github.event.before}}..${{github.event.after}} --diff-filter=AM --diff-filter=AM -- 'src/content/posts/*.md') ; do
+              curl -X POST https://n8n.lem0n.cc/webhook/16956957-43f0-4980-a238-b7c4a7960f71 -H 'Authorization: ${{secrets.AUTH_HEADER_VALUE}}' -d '{"filename": "{$(echo $file | tr -s " " | cut -d " " -f 2 | rev | cut -d / -f 1 | rev)", "action": "$(echo $file | cut -d " " -f 1)"}'
+            done
