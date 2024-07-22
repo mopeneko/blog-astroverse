@@ -38,10 +38,10 @@ const onClickShare = async () => {
 <template>
     <div>
         <a :href="tweetURL.toString()" rel="noopener noreferrer" target="_blank">
-            <Button class="text-xl"><XIcon class="inline" /> でシェア</Button>
+            <Button class="text-xl"><XIcon class="inline" aria-label="X" /> でシェア</Button>
         </a>
         <a :href="lineURL.toString()" rel="noopener noreferrer" target="_blank">
-            <Button class="text-xl"><LineIcon class="inline" /> でシェア</Button>
+            <Button class="text-xl"><LineIcon class="inline" aria-label="LINE" /> でシェア</Button>
         </a>
         <Button @click="onClickShare" class="text-xl"><ShareIcon class="inline" /> シェア</Button>
     </div>
