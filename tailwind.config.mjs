@@ -7,36 +7,14 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: [
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica",
+      body: [
+        "Helvetica Neue",
         "Arial",
-        "sans-serif",
-      ],
-      serif: [
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Georgia",
-        "Cambria",
-        "Times New Roman",
-        "serif",
-      ],
-      mono: [
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        "Liberation Mono",
-        "Courier New",
-        "monospace",
-      ],
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Meiryo",
+        "sans-serif"
+      ]
     },
     extend: {
       backgroundImage: {
