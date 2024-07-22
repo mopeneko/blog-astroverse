@@ -65,4 +65,19 @@ const { Content } = await post.render();
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    image: post.data.cover ? new URL(post.data.cover.src, Astro.site).toString() : "",
+    name: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.pubDate,
+    author: [
+      {
+        "@type": "Person",
+        name: "mopeneko",
+        url: "https://nostree.me/npub1tehcg89zc3ynfewfq8xvn69dxxvymtyel27unmj4xzvj3d7y8p7qe783a6",
+      },
+    ],
+  })} />
 </BaseLayout>
