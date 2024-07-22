@@ -52,14 +52,6 @@ const { Content } = await post.render();
           >
         </div>
         <Share client:visible src={Astro.url} title={post.data.title} />
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-3857753364740983"
-          data-ad-slot="3205804455"></ins>
-          <script is:inline>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
     </article>
     <div class="mt-4">
       <RelatedPostsCard
@@ -67,5 +59,13 @@ const { Content } = await post.render();
         currentSlug={post.slug}
       />
     </div>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-3857753364740983"
+      data-ad-slot="3205804455"></ins>
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </main>
 </BaseLayout>
