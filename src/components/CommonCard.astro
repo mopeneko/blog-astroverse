@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import placeholder from "../content/images/placeholder.png"
 
 interface Props {
@@ -9,13 +9,20 @@ interface Props {
 }
 
 const { post } = Astro.props;
+const cover = post.data.cover ?? placeholder
 ---
 
 <div
   class="relative overflow-hidden rounded-xl bg-white transition-transform duration-500 hover:-translate-y-1 hover:scale-105 dark:bg-neutral-900"
 >
   <a href={`/posts/${post.slug}/`} class="block">
-    <Image src={post.data.cover ?? placeholder } alt={post.data.coverAlt ?? ""} />
+    <Picture
+      formats={["avif", "webp"]}
+      src={post.data.cover ?? placeholder}
+      alt={post.data.coverAlt ?? ""}
+      widths={[240, 540, 720, cover.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${cover.width}px`}
+    />
     <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t p-5 md:p-6">
       <div class="mt-16 flex items-center gap-4 text-xs text-white">
         <span>{post.data.tags.join(" ")}</span>

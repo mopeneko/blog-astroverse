@@ -3,9 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import Share from "@components/Share.vue";
-import type { MarkdownHeading } from "astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -28,7 +27,15 @@ const { Content, headings } = await post.render();
         <div>
           {
             post.data.cover && (
-              <Image src={post.data.cover} alt={post.data.coverAlt ?? ""} />
+              <Picture
+                formats={["avif", "webp"]}
+                src={post.data.cover}
+                alt={post.data.coverAlt ?? ""}
+                loading="eager"
+                fetchpriority="high"
+                widths={[240, 540, 720, post.data.cover.width]}
+                sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post.data.cover.width}px`}
+              />
             )
           }
         </div>
