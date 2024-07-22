@@ -15,6 +15,6 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-            for file in $(git diff ${{github.event.before}}..${{github.event.after}} --name-status --diff-filter=AM -- 'src/content/posts/*') ; do
-              curl -X POST https://n8n.lem0n.cc/webhook/16956957-43f0-4980-a238-b7c4a7960f71 -H 'Authorization: ${{secrets.AUTH_HEADER_VALUE}}' -d filename=$(echo $file | tr -s " " | cut -d " " -f 2 | rev | cut -d / -f 1 | rev) -d action=$(echo $file | cut -d " " -f 1)
+            git diff ${{github.event.before}}..${{github.event.after}} --name-status --diff-filter=AM -- 'src/content/posts/*' | while read status file; do
+              curl -X POST https://n8n.lem0n.cc/webhook/16956957-43f0-4980-a238-b7c4a7960f71 -H 'Authorization: ${{secrets.AUTH_HEADER_VALUE}}' -d filename=$file -d action=$status
             done
