@@ -7,7 +7,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      body: [
+      sans: [
         "Helvetica Neue",
         "Arial",
         "Hiragino Kaku Gothic ProN",
