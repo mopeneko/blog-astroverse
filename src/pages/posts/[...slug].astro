@@ -5,6 +5,7 @@ import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { Image } from "astro:assets";
 import Share from "@components/Share.vue";
+import type { MarkdownHeading } from "astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
@@ -31,6 +32,23 @@ const { Content } = await post.render();
             )
           }
         </div>
+        {(() => {
+          if (headings.length === 0) {
+            return;
+          }
+
+          return (
+            <div class="border-dotted border-2 border-slate-700 px-4 py-2">
+              <ul role="list" class="list-decimal not-prose list-inside">
+                {headings.map((heading) => {
+                  if (heading.depth === 2) {
+                    return <li><a href={heading.slug} class="underline">{heading.text}</a></li>
+                  }
+                })}
+              </ul>
+            </div>
+          );
+        })()}
         <div>
           <Content />
         </div>
