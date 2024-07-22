@@ -47,17 +47,21 @@ const { title, description, image = "/blog-placeholder-1.avif" } = Astro.props;
 </script>
 
 <!-- Google AdSense -->
-<script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3857753364740983"
-crossorigin="anonymous"></script>
-
+<script is:inline type="text/partytown" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3857753364740983"></script>
 
 <!-- Google tag (gtag.js) -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-DB7G8H3V1H"></script>
-<script is:inline>
+<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-DB7G8H3V1H"></script>
+
+<script is:inline type="text/partytown">
+  partytown = {
+    forward: ["dataLayer.push", "adsbygoogle.push"],
+  }
+</script>
+
+<script is:inline type="text/partytown">
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  window.gtag = function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-DB7G8H3V1H');
 </script>
-
