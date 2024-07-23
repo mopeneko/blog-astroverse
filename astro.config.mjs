@@ -33,7 +33,7 @@ export default defineConfig({
     mdx(),
     sitemap({
       serialize(item) {
-        item.lastmod = new Date().toISOString().split('T')[0];
+        item.lastmod = new Date().toISOString();
 
         const { pathname } = new URL(item.url);
 
