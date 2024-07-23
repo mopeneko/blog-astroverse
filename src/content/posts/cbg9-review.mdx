@@ -10,13 +10,18 @@ tags:
   - カンナビノイド
 author: mopeneko
 ---
+
+import MyPicture from "@components/MyPicture.astro";
+import exterior from "@/content/images/foto_no_exif-2--1-.jpg";
+import packagePicture from "@/content/images/foto_no_exif-1--1.jpg";
+
 先日、名古屋栄にあるADD CBDの店舗に行ってきました。
 
-![ADD CBD 名古屋錦店](../images/foto_no_exif-2--1-.jpg)
+<MyPicture src={exterior} alt="ADD CBD 名古屋錦店"></MyPicture>
 
 様々な商品がありましたが、その中でもADD CBDのXアカウントが推していたCBG9を買ってみました。
 
-![CBD9のパッケージ画像](../images/foto_no_exif-1--1.jpg)
+<MyPicture src={packagePicture} alt="CBG9のパッケージ画像"></MyPicture>
 
 ジャパニーズマゲニーズという有名なラッパーグループとのコラボ製品らしいです。
 

@@ -12,8 +12,10 @@ tags:
 author: mopeneko
 ---
 
+import MyPicture from "@components/MyPicture.astro";
+import brokenEarpad from "@/content/images/PXL-20240722-131802873 - コピー.jpg"
 import Product from "@components/Product.astro";
-import image from "../images/m-200.jpg";
+import image from "@/content/images/m-200.jpg";
 
 みなさんはお気に入りのヘッドホンをお持ちでしょうか？
 
@@ -53,7 +55,7 @@ import image from "../images/m-200.jpg";
 
 流石に同じヘッドホンを毎日のように1年間使っていると、イヤーパッドが摩耗してきます。
 
-![イヤーパッドが損傷した画像](../images/PXL-20240722-131802873%20-%20コピー.jpg)
+<MyPicture src={brokenEarpad} alt="イヤーパッドが損傷した画像" />
 
 このように、イヤーカップが破れて中身のスポンジが飛び出てしまっています。
 

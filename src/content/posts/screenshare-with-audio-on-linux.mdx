@@ -10,6 +10,9 @@ tags:
 author: mopeneko
 ---
 
+import MyPicture from "@components/MyPicture.astro";
+import screenshot from "@/content/images/image.png";
+
 Windowsでやっていたように画面共有でFirefoxのウインドウを共有したら、音声が共有されなくて困りました。
 
 ハードウェアアクセラレーションをオフにしても同様で、調べてみるとこんなリポジトリを見つけました。
@@ -20,7 +23,7 @@ Vesktopという、Vencordが作ったブラウザ版DiscordをElectronでラッ
 
 AURにあるので、`paru -S vesktop` でサクッとインストールして画面共有しようとしてみると...
 
-![Vesktopのスクリーンショット](../images/image.png)
+<MyPicture src={screenshot} alt="Vesktopのスクリーンショット" />
 
 オーディオソースが選べる、これで音声を共有できますね。
 
