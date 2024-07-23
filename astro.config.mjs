@@ -93,7 +93,5 @@ export default defineConfig({
     }),
     svelte(),
   ],
-  adapter: cloudflare({
-    imageService: "cloudflare",
-  }),
+  adapter: cloudflare(),
 });
