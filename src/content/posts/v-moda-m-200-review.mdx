@@ -13,6 +13,7 @@ author: mopeneko
 ---
 
 import Product from "@components/Product.astro";
+import image from "../images/m-200.jpg";
 
 みなさんはお気に入りのヘッドホンをお持ちでしょうか？
 
@@ -66,8 +67,4 @@ YAXIなどから互換品は出ていませんが、公式から交換用イヤ�
 
 きっとみなさんのオーディオ体験を向上させるでしょう。
 
-<Product>
-  <a href="https://px.a8.net/svt/ejp?a8mat=3TB0GO+8FN3AQ+55QO+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.e-earphone.jp%2Fproducts%2Fdetail%2F17393%2F" rel="nofollow">
-  <img border="0" alt="" src="https://www.e-earphone.jp/_image/productimage/300952/300952_65321.jpg"></img></a>
-  <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=3TB0GO+8FN3AQ+55QO+BWGDT" alt=""></img>
-</Product>
+<Product manufacture="Roland" name="V-MODA M-200" image={image} urls={[{"name": "eイヤホンで購入", "url": "https://px.a8.net/svt/ejp?a8mat=3TB0GO+8FN3AQ+55QO+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.e-earphone.jp%2Fproducts%2Fdetail%2F17393%2F"}]} />

@@ -1,7 +1,51 @@
+---
+import Button from './Button.svelte';
+import IconText from './IconText.svelte';
+import MyPicture from './MyPicture.astro';
+
+export interface AffiliateLink {
+    name: string;
+    url: string;
+}
+
+export interface Props {
+    manufacture: string;
+    name: string;
+    image: ImageMetadata;
+    urls: AffiliateLink[];
+}
+
+const{ manufacture, name, image, urls } = Astro.props;
+---
+
 <div class="mb-5 rounded-lg border-4 border-slate-700 not-prose text-2xl">
     <span class="iconify tabler--ad"></span>
-    <slot />
-    <p class="text-center">
-        <span class="iconify icon-park-solid--up-c" ></span>&nbsp;商品を購入する
-    </p>
+    <div class="px-4 py-2">
+        <h3 class="text-lg">{manufacture}</h3>
+        <h2 class="text-xl">{name}</h2>
+        {(() => {
+            if (urls.length === 1) {
+                return (
+                    <a href={urls[0].url} rel="noopener noreferrer" target="_blank">
+                        <MyPicture src={image} alt={`${name}の商品画像`} />
+                    </a>
+                )
+            }
+
+            return <MyPicture src={image} alt={`${name}の商品画像`} />
+        })()}
+        <div class="text-center">
+            {
+                urls.map((url) =>
+                    <div class="pt-4">
+                        <a href={url.url} rel="noopener noreferrer" target="_blank">
+                            <Button>
+                                <span class="iconify icon-park-solid--right-c align-text-bottom" ></span><IconText>&nbsp;{url.name}</IconText>
+                            </Button>
+                        </a>
+                    </div>
+                )
+            }
+        </div>
+    </div>
 </div>

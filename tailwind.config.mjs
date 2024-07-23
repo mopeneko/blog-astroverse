@@ -48,7 +48,7 @@ export default {
     },
     {
       source: iconParkSolid,
-      icons: ["up-c"],
+      icons: ["up-c", "right-c"],
     },
     {
       source: tabler,
