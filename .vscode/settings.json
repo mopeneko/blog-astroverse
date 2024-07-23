@@ -1,5 +1,23 @@
 {
   "files.associations": {
     "*.mdx": "markdown"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.snippetSuggestions": "top"
+  },
+  "[mdx]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "on",
+      "strings": "on"
+    },
+    "editor.snippetSuggestions": "top"
   }
 }
