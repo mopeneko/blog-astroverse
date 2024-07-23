@@ -61,21 +61,24 @@ const { page } = Astro.props;
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {page.data.slice(3).map((post, i) => {
             if (i % 3 === 0) {
-              return <>
-                <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-format="fluid"
-                  data-ad-layout-key="-6t+ed+2i-1n-4w"
-                  data-ad-client="ca-pub-3857753364740983"
-                  data-ad-slot="2091036471">
-                </ins>
-                <script is:inline>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <PostCard post={post} />
-              </>
+              return (
+                <>
+                  <ins
+                    class="adsbygoogle"
+                    style="display:block"
+                    data-ad-format="fluid"
+                    data-ad-layout-key="-6t+ed+2i-1n-4w"
+                    data-ad-client="ca-pub-3857753364740983"
+                    data-ad-slot="2091036471"
+                  />
+                  <script is:inline>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                  <PostCard post={post} />
+                </>
+              );
             }
-            return <PostCard post={post} />
+            return <PostCard post={post} />;
           })}
         </div>
       </>
@@ -83,15 +86,16 @@ const { page } = Astro.props;
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {page.data.map((post, i) => {
           if ((i + 2) % 3 === 0) {
-            <ins class="adsbygoogle"
+            <ins
+              class="adsbygoogle"
               style="display:block"
               data-ad-format="fluid"
               data-ad-layout-key="-6t+ed+2i-1n-4w"
               data-ad-client="ca-pub-3857753364740983"
-              data-ad-slot="2091036471">
-            </ins>
+              data-ad-slot="2091036471"
+            />;
           }
-          <PostCard post={post} />
+          <PostCard post={post} />;
         })}
       </div>
     )

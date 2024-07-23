@@ -8,8 +8,7 @@ export const SITE_DESCRIPTION = "技術系解説ブログ";
 
 // Tags Page Metadata, src/pages/tags/index.astro
 export const Tags_TITLE = `タグ - ${SITE_TITLE}`;
-export const Tags_DESCRIPTION =
-  `${SITE_TITLE}の全タグとそれぞれのタグの記事数`;
+export const Tags_DESCRIPTION = `${SITE_TITLE}の全タグとそれぞれのタグの記事数`;
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
@@ -31,9 +30,7 @@ export function getCategoryMetadata(category: string) {
 export const HeaderLinks = [];
 
 // Footer Links, src/components/Footer.astro
-export const FooterLinks = [
-  { href: "/tags/", title: "タグ" },
-];
+export const FooterLinks = [{ href: "/tags/", title: "タグ" }];
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [

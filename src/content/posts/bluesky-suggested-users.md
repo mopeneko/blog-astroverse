@@ -10,6 +10,7 @@ tags:
   - Bluesky
 author: mopeneko
 ---
+
 Blueskyの新規登録が自由に行えるようになりましたね。
 
 私はそれなりに初期(2023年5月)からBlueskyに触れているので、Blueskyでフォローするとうれしくなるアカウントを紹介しようと思います。

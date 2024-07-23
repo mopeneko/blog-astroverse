@@ -1,7 +1,7 @@
 import { addIconSelectors } from "@iconify/tailwind";
 import prime from "@iconify-json/prime/icons.json";
 import jam from "@iconify-json/jam/icons.json";
-import ion from "@iconify-json/ion/icons.json"
+import ion from "@iconify-json/ion/icons.json";
 import iconParkSolid from "@iconify-json/icon-park-solid/icons.json";
 import tabler from "@iconify-json/tabler/icons.json";
 import ph from "@iconify-json/ph/icons.json";
@@ -21,8 +21,8 @@ export default {
         "Hiragino Kaku Gothic ProN",
         "Hiragino Sans",
         "Meiryo",
-        "sans-serif"
-      ]
+        "sans-serif",
+      ],
     },
     extend: {
       backgroundImage: {
@@ -33,30 +33,44 @@ export default {
       },
     },
   },
-  plugins: [require("preline/plugin"), require("@tailwindcss/typography"), addIconSelectors([
-    {
-      source: prime,
-      icons: ["twitter"],
-    },
-    {
-      source: jam,
-      icons: ["line"],
-    },
-    {
-      source: ion,
-      icons: ["share"],
-    },
-    {
-      source: iconParkSolid,
-      icons: ["up-c", "right-c"],
-    },
-    {
-      source: tabler,
-      icons: ["search", "sun-filled", "moon-filled", "menu-2", "menu-order", "rss", "chevron-left", "chevron-right", "ad"],
-    },
-    {
-      source: ph,
-      icons: ["link"],
-    }
-  ])],
+  plugins: [
+    require("preline/plugin"),
+    require("@tailwindcss/typography"),
+    addIconSelectors([
+      {
+        source: prime,
+        icons: ["twitter"],
+      },
+      {
+        source: jam,
+        icons: ["line"],
+      },
+      {
+        source: ion,
+        icons: ["share"],
+      },
+      {
+        source: iconParkSolid,
+        icons: ["up-c", "right-c"],
+      },
+      {
+        source: tabler,
+        icons: [
+          "search",
+          "sun-filled",
+          "moon-filled",
+          "menu-2",
+          "menu-order",
+          "rss",
+          "chevron-left",
+          "chevron-right",
+          "ad",
+        ],
+      },
+      {
+        source: ph,
+        icons: ["link"],
+      },
+    ]),
+  ],
 };

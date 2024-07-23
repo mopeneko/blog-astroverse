@@ -44,7 +44,6 @@ Experience [**AstroVerse**](https://verse-astro.vercel.app) in action.
 
 Share your project built with AstroVerse! Open an issue titled "Showcase Submission" with your project's details to be featured in our Showcase.
 
-
 ## 💻 Running Locally
 
 **Recommended extensions for VSCode:**
@@ -149,7 +148,6 @@ export const SocialLinks = [
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
 ```
-
 
 ## Deployment
 

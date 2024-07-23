@@ -1,20 +1,20 @@
 {
-	"New Post": {
-		"scope": "markdown,mdx",
-		"description": "Create a new post written metadata",
-		"prefix": "post",
-		"body": [
-			"---",
-			"title: ",
-			"pubDate: ",
-			"description: ",
-			"category:",
-			"  - ",
-			"tags:",
-			"  - ",
-			"author: mopeneko",
-			"---",
-			""
-		]
-	}
+  "New Post": {
+    "scope": "markdown,mdx",
+    "description": "Create a new post written metadata",
+    "prefix": "post",
+    "body": [
+      "---",
+      "title: ",
+      "pubDate: ",
+      "description: ",
+      "category:",
+      "  - ",
+      "tags:",
+      "  - ",
+      "author: mopeneko",
+      "---",
+      "",
+    ],
+  },
 }

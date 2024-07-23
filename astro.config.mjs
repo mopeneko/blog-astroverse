@@ -13,24 +13,33 @@ export default defineConfig({
   trailingSlash: "always",
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport'
+    defaultStrategy: "viewport",
   },
   experimental: {
-    contentCollectionCache: true
+    contentCollectionCache: true,
   },
   image: {
-    remotePatterns: [{
-      protocol: "https",
-      hostname: "*.unsplash.com"
-    }]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.unsplash.com",
+      },
+    ],
   },
   markdown: {
-    remarkPlugins: [remarkModifiedTime]
+    remarkPlugins: [remarkModifiedTime],
   },
-  integrations: [mdx(), sitemap(), pagefind(), tailwind(), partytown({
-    config: {
-      forward: ["dataLayer.push"],
-      debug: false
-    }
-  }), svelte()]
+  integrations: [
+    mdx(),
+    sitemap(),
+    pagefind(),
+    tailwind(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+        debug: false,
+      },
+    }),
+    svelte(),
+  ],
 });

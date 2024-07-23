@@ -26,56 +26,62 @@ const { Content, headings } = await post.render();
 >
   <main>
     <article class="prose mx-auto dark:prose-invert">
-        <div class="prose-h1 text-center">
-          <h1>{post.data.title}</h1>
-        </div>
-        <div>
-          {
-            post.data.cover && (
-              <MyPicture
-                src={post.data.cover}
-                alt={post.data.coverAlt ?? ""}
-                loading="eager"
-                fetchpriority="high"
-              />
-            )
-          }
-        </div>
-        {(() => {
+      <div class="prose-h1 text-center">
+        <h1>{post.data.title}</h1>
+      </div>
+      <div>
+        {
+          post.data.cover && (
+            <MyPicture
+              src={post.data.cover}
+              alt={post.data.coverAlt ?? ""}
+              loading="eager"
+              fetchpriority="high"
+            />
+          )
+        }
+      </div>
+      {
+        (() => {
           if (headings.length === 0) {
             return;
           }
 
           return (
-            <div class="border-dotted border-2 border-slate-700 px-4 py-2">
-              <ul role="list" class="list-decimal not-prose list-inside">
+            <div class="border-2 border-dotted border-slate-700 px-4 py-2">
+              <ul role="list" class="not-prose list-inside list-decimal">
                 {headings.map((heading) => {
                   if (heading.depth === 2) {
-                    return <li><a href={`#${heading.slug}`} class="underline">{heading.text}</a></li>
+                    return (
+                      <li>
+                        <a href={`#${heading.slug}`} class="underline">
+                          {heading.text}
+                        </a>
+                      </li>
+                    );
                   }
                 })}
               </ul>
             </div>
           );
-        })()}
-        <div>
-          <Content />
-        </div>
-        <div class="prose-a:no-underline">
-          {
-            post.data.tags.map((tag) => (
-              <span class="mb-2 mr-2 inline-block rounded-full px-3 py-1 text-sm text-white bg-slate-700 hover:bg-slate-600 not-prose">
-                <a href={`/tags/${tag}/1/`}>{tag}</a>
-              </span>
-            ))
-          }
-        </div>
-        <div class="flex justify-between">
-          <small
-            >Publish on <FormattedDate date={post.data.pubDate} /></small
-          >
-        </div>
-        <Share src={Astro.url} title={post.data.title} />
+        })()
+      }
+      <div>
+        <Content />
+      </div>
+      <div class="prose-a:no-underline">
+        {
+          post.data.tags.map((tag) => (
+            <span class="not-prose mb-2 mr-2 inline-block rounded-full bg-slate-700 px-3 py-1 text-sm text-white hover:bg-slate-600">
+              <a href={`/tags/${tag}/1/`}>{tag}</a>
+            </span>
+          ))
+        }
+      </div>
+      <div class="flex justify-between">
+        <small>Publish on <FormattedDate date={post.data.pubDate} /></small>
+      </div>
+      <Share src={Astro.url} title={post.data.title} />
     </article>
     <div class="mt-4">
       <RelatedPostsCard
@@ -83,7 +89,8 @@ const { Content, headings } = await post.render();
         currentSlug={post.slug}
       />
     </div>
-    <ins class="adsbygoogle"
+    <ins
+      class="adsbygoogle"
       style="display:block"
       data-ad-format="autorelaxed"
       data-ad-client="ca-pub-3857753364740983"
@@ -92,19 +99,24 @@ const { Content, headings } = await post.render();
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </main>
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    image: post.data.cover ? new URL(post.data.cover.src, Astro.site).toString() : "",
-    name: post.data.title,
-    description: post.data.description,
-    datePublished: post.data.pubDate,
-    author: [
-      {
-        "@type": "Person",
-        name: "mopeneko",
-        url: "https://nostree.me/npub1tehcg89zc3ynfewfq8xvn69dxxvymtyel27unmj4xzvj3d7y8p7qe783a6",
-      },
-    ],
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      image: post.data.cover
+        ? new URL(post.data.cover.src, Astro.site).toString()
+        : "",
+      name: post.data.title,
+      description: post.data.description,
+      datePublished: post.data.pubDate,
+      author: [
+        {
+          "@type": "Person",
+          name: "mopeneko",
+          url: "https://nostree.me/npub1tehcg89zc3ynfewfq8xvn69dxxvymtyel27unmj4xzvj3d7y8p7qe783a6",
+        },
+      ],
+    })}
+  />
 </BaseLayout>
