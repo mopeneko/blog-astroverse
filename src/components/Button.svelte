@@ -6,5 +6,5 @@
 
 <button
     on:click
-    class="mb-2 mr-2 px-3 py-2 w-full rounded-md align-middle text-white bg-slate-700 hover:bg-slate-600 not-prose {className}"
+    class="px-3 py-2 w-full rounded-md align-middle text-white bg-slate-700 hover:bg-slate-600 not-prose {className}"
 ><slot /></button>
