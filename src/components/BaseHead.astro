@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import placeholder from "@/content/images/placeholder.png";
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.avif" } = Astro.props;
+const { title, description, image = placeholder.src } = Astro.props;
 ---
 
 <!-- Global Metadata -->
