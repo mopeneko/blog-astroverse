@@ -15,8 +15,8 @@ const { loading, fetchpriority } = Astro.props;
 ---
 
 <Picture
-  formats={["avif", "webp"]}
-  fallbackFormat="png"
+  formats={["avif"]}
+  fallbackFormat="webp"
   src={src}
   alt={alt}
   widths={[240, 540, 720, src.width]}
