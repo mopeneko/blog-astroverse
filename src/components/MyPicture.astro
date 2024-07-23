@@ -1,0 +1,25 @@
+---
+import { Picture } from "astro:assets";
+import placeholder from "@/content/images/placeholder.png";
+
+export interface Props {
+    src?: ImageMetadata;
+    alt?: string;
+    loading?: "eager" | "lazy";
+    fetchpriority?: "auto" | "low" | "high";
+}
+
+const src = Astro.props.src ?? placeholder;
+const alt = Astro.props.alt ?? "";
+const { loading, fetchpriority } = Astro.props;
+---
+
+<Picture
+    formats={["avif", "webp"]}
+    src={src}
+    alt={alt}
+    widths={[240, 540, 720, src.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${src.width}px`}
+    loading={loading}
+    fetchpriority={fetchpriority}
+/>

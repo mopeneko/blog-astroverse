@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
-import { Picture } from "astro:assets";
 import Share from "@components/Share.svelte";
+import MyPicture from "@components/MyPicture.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -27,14 +27,11 @@ const { Content, headings } = await post.render();
         <div>
           {
             post.data.cover && (
-              <Picture
-                formats={["avif", "webp"]}
+              <MyPicture
                 src={post.data.cover}
                 alt={post.data.coverAlt ?? ""}
                 loading="eager"
                 fetchpriority="high"
-                widths={[240, 540, 720, post.data.cover.width]}
-                sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post.data.cover.width}px`}
               />
             )
           }
