@@ -37,10 +37,10 @@ export const FooterLinks = [
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
-  { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
+  { href: "/rss.xml", icon: "tabler--rss", label: "RSS" },
   {
     href: "https://nostree.me/npub1tehcg89zc3ynfewfq8xvn69dxxvymtyel27unmj4xzvj3d7y8p7qe783a6",
-    icon: "ph:link",
+    icon: "ph--link",
     label: "Nostree",
   },
 ];

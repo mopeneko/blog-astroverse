@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import Link from "@components/Links.astro";
 import { BRAND_NAME, FooterLinks, SocialLinks } from "@consts";
 const today = new Date();
@@ -36,7 +35,7 @@ const today = new Date();
                 class="absolute inset-0 z-10"
                 aria-label={link.label}
               />
-              <Icon name={link.icon} class="icon-base" />
+              <span class={`"icon-base iconify ${link.icon}`}></span>
             </button>
           ))
         }
