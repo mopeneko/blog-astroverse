@@ -17,12 +17,13 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content, headings } = await post.render();
+const cover = post.data.cover ?? placeholder;
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  image={post.data.cover?.src ?? placeholder.src}
+  image={cover.src}
 >
   <main>
     <article class="prose mx-auto dark:prose-invert">
@@ -30,16 +31,12 @@ const { Content, headings } = await post.render();
         <h1>{post.data.title}</h1>
       </div>
       <div>
-        {
-          post.data.cover && (
-            <MyPicture
-              src={post.data.cover}
-              alt={post.data.coverAlt ?? ""}
-              loading="eager"
-              fetchpriority="high"
-            />
-          )
-        }
+        <MyPicture
+          src={cover}
+          alt={post.data.coverAlt ?? ""}
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
       {
         (() => {
