@@ -117,4 +117,18 @@ const cover = post.data.cover ?? placeholder;
       ],
     })}
   />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: post.data.tags.map((tag, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tag,
+        item: `${new URL(`/tags/${tag}/1`, Astro.site)}`
+      })),
+    })}
+  />
 </BaseLayout>
