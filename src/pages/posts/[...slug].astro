@@ -5,6 +5,7 @@ import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import Share from "@components/Share.svelte";
 import MyPicture from "@components/MyPicture.astro";
+import placeholder from "@/content/images/placeholder.png";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -18,7 +19,11 @@ const post = Astro.props;
 const { Content, headings } = await post.render();
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.cover?.src ?? placeholder.src}
+>
   <main>
     <article class="prose mx-auto dark:prose-invert">
         <div class="prose-h1 text-center">
