@@ -127,7 +127,7 @@ const cover = post.data.cover ?? placeholder;
         "@type": "ListItem",
         position: i + 1,
         name: tag,
-        item: `${new URL(`/tags/${tag}/1`, Astro.site)}`,
+        item: `${new URL(`/tags/${tag}/1/`, Astro.site)}`,
       })),
     })}
   />
