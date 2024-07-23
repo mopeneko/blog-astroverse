@@ -7,89 +7,86 @@ import pagefind from "astro-pagefind";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
+  output: "hybrid",
   site: "https://www.mope-blog.com/",
   trailingSlash: "always",
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "viewport",
+    defaultStrategy: "viewport"
   },
   experimental: {
-    contentCollectionCache: true,
+    contentCollectionCache: true
   },
   image: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*.unsplash.com",
-      },
-    ],
+    remotePatterns: [{
+      protocol: "https",
+      hostname: "*.unsplash.com"
+    }]
   },
   markdown: {
-    remarkPlugins: [remarkModifiedTime],
+    remarkPlugins: [remarkModifiedTime]
   },
-  integrations: [
-    mdx(),
-    sitemap({
-      serialize(item) {
-        item.lastmod = new Date().toISOString();
+  integrations: [mdx(), sitemap({
+    serialize(item) {
+      item.lastmod = new Date().toISOString();
+      const {
+        pathname
+      } = new URL(item.url);
 
-        const { pathname } = new URL(item.url);
-
-        // Top
-        if (pathname === "/") {
-          item.priority = 1.0;
-          item.changefreq = "daily";
-          return item;
-        }
-
-        // Tags
-        if (pathname === "/tags/") {
-          item.priority = 0.5;
-          item.changefreq = "monthly"
-          return item;
-        }
-
-        // Page
-        if (/^\/page\/[\d]+\/$/.test(pathname)) {
-          item.priority = 0.6;
-          item.changefreq = "weekly";
-          return item;
-        }
-
-        // Article
-        if (/^\/posts\/[\w-]+\/$/.test(pathname)) {
-          item.priority = 0.8;
-          item.changefreq = "weekly";
-          return item;
-        }
-
-        // Tag
-        if (/^\/tags\/[\w%]+\/[\d]+\/$/.test(pathname)) {
-          item.priority = 0.5;
-          item.changefreq = "monthly";
-          return item;
-        }
-
-        // Category
-        if (/^\/category\/[\w%]+\/[\d]+\/$/.test(pathname)) {
-          item.priority = 0.5;
-          item.changefreq = "monthly";
-          return item;
-        }
-
+      // Top
+      if (pathname === "/") {
+        item.priority = 1.0;
+        item.changefreq = "daily";
         return item;
       }
-    }),
-    pagefind(),
-    tailwind(),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-        debug: false,
-      },
-    }),
-    svelte(),
-  ],
+
+      // Tags
+      if (pathname === "/tags/") {
+        item.priority = 0.5;
+        item.changefreq = "monthly";
+        return item;
+      }
+
+      // Page
+      if (/^\/page\/[\d]+\/$/.test(pathname)) {
+        item.priority = 0.6;
+        item.changefreq = "weekly";
+        return item;
+      }
+
+      // Article
+      if (/^\/posts\/[\w-]+\/$/.test(pathname)) {
+        item.priority = 0.8;
+        item.changefreq = "weekly";
+        return item;
+      }
+
+      // Tag
+      if (/^\/tags\/[\w%]+\/[\d]+\/$/.test(pathname)) {
+        item.priority = 0.5;
+        item.changefreq = "monthly";
+        return item;
+      }
+
+      // Category
+      if (/^\/category\/[\w%]+\/[\d]+\/$/.test(pathname)) {
+        item.priority = 0.5;
+        item.changefreq = "monthly";
+        return item;
+      }
+      return item;
+    }
+  }), pagefind(), tailwind(), partytown({
+    config: {
+      forward: ["dataLayer.push"],
+      debug: false
+    }
+  }), svelte()],
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  })
 });

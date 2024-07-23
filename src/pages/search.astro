@@ -6,6 +6,9 @@ import {
   SITE_TITLE,
 } from "@consts";
 import Pagefind from "astro-pagefind/components/Search";
+export const prerender = false;
+console.log(Astro.url.href);
+const q = Astro.url.searchParams.get("q") ?? undefined;
 ---
 
 <BaseLayout title={SEARCH_PAGE_TITLE} description={SEARCH_PAGE_DESCRIPTION}>
@@ -24,6 +27,7 @@ import Pagefind from "astro-pagefind/components/Search";
             id="search"
             className="pagefind-ui h-full w-full"
             uiOptions={{ showImages: false }}
+            query={q}
           />
         </div>
       </div>
