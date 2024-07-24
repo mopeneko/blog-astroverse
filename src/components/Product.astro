@@ -27,7 +27,7 @@ const { manufacture, name, image, urls } = Astro.props;
       (() => {
         if (urls.length === 1) {
           return (
-            <a href={urls[0].url} rel="noopener noreferrer" target="_blank">
+            <a href={urls[0].url} rel="noopener">
               <MyPicture src={image} alt={`${name}の商品画像`} />
             </a>
           );
@@ -40,7 +40,7 @@ const { manufacture, name, image, urls } = Astro.props;
       {
         urls.map((url) => (
           <div class="mt-2">
-            <a href={url.url} rel="noopener noreferrer" target="_blank">
+            <a href={url.url} rel="noopener">
               <Button class="mb-0">
                 <>
                   <span class="iconify align-text-bottom icon-park-solid--right-c" />
