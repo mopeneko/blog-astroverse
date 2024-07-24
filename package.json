@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "format": "prettier -w .",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
@@ -39,6 +40,7 @@
     "@iconify-json/prime": "^1.1.12",
     "@iconify/tailwind": "^1.1.1",
     "@tailwindcss/typography": "^0.5.13",
+    "husky": "^9.1.1",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.6.2",
