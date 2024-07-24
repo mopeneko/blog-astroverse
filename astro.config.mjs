@@ -8,6 +8,7 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 import cloudflare from "@astrojs/cloudflare";
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +32,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkModifiedTime],
+    rehypePlugins: [[rehypeExternalLinks, { rel: ["noopener", "noreferrer"] }]],
   },
   integrations: [
     mdx(),
