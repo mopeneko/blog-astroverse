@@ -6,7 +6,7 @@
     "body": [
       "---",
       "title: ",
-      "pubDate: ",
+      "pubDate: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
       "description: ",
       "category:",
       "  - ",
