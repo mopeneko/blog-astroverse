@@ -19,23 +19,25 @@ const bgClass = (() => {
     case "error":
         return "bg-red-100";
     }
-})()
+})();
+
+const iconClass = ((() => {
+    switch (level) {
+    case "info":
+    default:
+        return "material-symbols--info";
+
+    case "warning":
+        return "material-symbols--warning";
+
+    case "error":
+        return "material-symbols--error";
+    }
+}))();
 ---
 <div class=`flex rounded-lg ${bgClass}`>
     <div class=`flex-none place-content-center px-4 text-4xl`>
-        {(() => {
-            switch (level) {
-            case "info":
-            default:
-                return <span class="iconify material-symbols--info" />
-
-            case "warning":
-                return <span class="iconify material-symbols--warning" />
-
-            case "error":
-                return <span class="iconify material-symbols--error" />
-            }
-        })()}
+        <span class=`iconify ${iconClass}` />
     </div>
     <div class="flex-1">
         <slot />
