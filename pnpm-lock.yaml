@@ -32,6 +32,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.12.2(@types/node@20.14.11)(typescript@5.5.4))(tailwindcss@3.4.6)
+      '@iconify-json/material-symbols':
+        specifier: ^1.1.85
+        version: 1.1.85
       '@iconify-json/ph':
         specifier: ^1.1.13
         version: 1.1.13
@@ -795,6 +798,9 @@ packages:
 
   '@iconify-json/jam@1.1.8':
     resolution: {integrity: sha512-tp0Oynd8n8/DNIDHIltNTl2vXpHN09V1KMEF6mf8w6Tgsq/KQFvUWY0whD4cTvpR6PE/gCXibFnUNzpQSYTZnQ==}
+
+  '@iconify-json/material-symbols@1.1.85':
+    resolution: {integrity: sha512-GJXTScAIdaxxMPcp6GCd4qbntvHpG9UrF/2V03PMUuD7+1fMU5vHG5w0IGDdvqOnI9HpEcUFa7CFDVQHOpBeDA==}
 
   '@iconify-json/ph@1.1.13':
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
@@ -3717,6 +3723,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/jam@1.1.8':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols@1.1.85':
     dependencies:
       '@iconify/types': 2.0.0
 
