@@ -1,0 +1,43 @@
+---
+type Level = "info" | "warning" | "error";
+
+interface Props {
+    level: Level;
+}
+
+const { level } = Astro.props;
+
+const bgClass = (() => {
+    switch (level) {
+    case "info":
+    default:
+        return "bg-emerald-100";
+
+    case "warning":
+        return "bg-yellow-100";
+
+    case "error":
+        return "bg-red-100";
+    }
+})()
+---
+<div class=`flex rounded-lg ${bgClass}`>
+    <div class=`flex-none place-content-center px-4 text-4xl`>
+        {(() => {
+            switch (level) {
+            case "info":
+            default:
+                return <span class="iconify material-symbols--info" />
+
+            case "warning":
+                return <span class="iconify material-symbols--warning" />
+
+            case "error":
+                return <span class="iconify material-symbols--error" />
+            }
+        })()}
+    </div>
+    <div class="flex-1">
+        <slot />
+    </div>
+</div>

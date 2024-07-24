@@ -5,6 +5,7 @@ import ion from "@iconify-json/ion/icons.json";
 import iconParkSolid from "@iconify-json/icon-park-solid/icons.json";
 import tabler from "@iconify-json/tabler/icons.json";
 import ph from "@iconify-json/ph/icons.json";
+import materialSymbols from "@iconify-json/material-symbols/icons.json";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -70,6 +71,10 @@ export default {
       {
         source: ph,
         icons: ["link"],
+      },
+      {
+        source: materialSymbols,
+        icons: ["info", "warning", "error"],
       },
     ]),
   ],
