@@ -30,6 +30,7 @@ export function getCategoryMetadata(category: string) {
 export const HeaderLinks = [
   { title: "プライバシーポリシー", href: "/posts/privacy-policy/" },
   { title: "免責事項", href: "/posts/disclaimer/" },
+  { title: "お問い合わせ", href: "/contact/" },
 ];
 
 // Footer Links, src/components/Footer.astro
