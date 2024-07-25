@@ -27,7 +27,9 @@ export function getCategoryMetadata(category: string) {
 }
 
 // Header Links, src/components/Header.astro
-export const HeaderLinks = [];
+export const HeaderLinks = [
+  { title: "プライバシーポリシー", href: "/posts/privacy-policy/" }
+];
 
 // Footer Links, src/components/Footer.astro
 export const FooterLinks = [{ href: "/tags/", title: "タグ" }];
