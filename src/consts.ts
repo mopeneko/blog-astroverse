@@ -28,7 +28,8 @@ export function getCategoryMetadata(category: string) {
 
 // Header Links, src/components/Header.astro
 export const HeaderLinks = [
-  { title: "プライバシーポリシー", href: "/posts/privacy-policy/" }
+  { title: "プライバシーポリシー", href: "/posts/privacy-policy/" },
+  { title: "免責事項", href: "/posts/disclaimer/" },
 ];
 
 // Footer Links, src/components/Footer.astro
