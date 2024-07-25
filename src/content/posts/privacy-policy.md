@@ -18,11 +18,3 @@ author: mopeneko
 [WebChoices](https://optout.aboutads.info)にアクセスすることでCookieを無効にすることができます。
 
 また、mopenekoは、Amazon.co.jpを宣伝しリンクすることでサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
-
-## アクセス解析ツールについて
-
-当ブログでは、Googleによるアクセス解析ツール「Google Analytics」を利用しています。
-
-このGoogle Analyticsはトラフィックデータの収集のためにCookieを使用しております。
-
-トラフィックデータは匿名で収集されており、個人を特定するものではありません。
