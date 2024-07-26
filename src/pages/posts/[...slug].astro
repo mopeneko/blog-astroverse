@@ -6,6 +6,7 @@ import FormattedDate from "@components/FormattedDate.astro";
 import Share from "@components/Share.svelte";
 import MyPicture from "@components/MyPicture.astro";
 import placeholder from "@/content/images/placeholder.png";
+import Heading from "@components/Heading.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -64,7 +65,7 @@ const cover = post.data.cover ?? placeholder;
         })()
       }
       <div>
-        <Content />
+        <Content components={{ h2: Heading }} />
       </div>
       <div class="prose-a:no-underline">
         {
