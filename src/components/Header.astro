@@ -6,10 +6,10 @@ const isArticle = /^\/posts\/[\w-]+\/$/.test(Astro.url.pathname);
 
 <header class="z-50 flex w-full flex-wrap py-7 md:flex-nowrap md:justify-start">
   <nav
-    class="relative mx-auto flex w-full max-w-7xl basis-full flex-wrap items-center px-4 md:grid md:grid-cols-12"
+    class="relative mx-auto flex w-full max-w-7xl basis-full flex-wrap items-center px-4 md:flex"
     aria-label="Global"
   >
-    <div class="md:col-span-3">
+    <div class="md:flex-1">
       {
         (() => {
           if (isArticle) {
@@ -37,11 +37,11 @@ const isArticle = /^\/posts\/[\w-]+\/$/.test(Astro.url.pathname);
     </div>
 
     <div
-      class="ms-auto flex items-center gap-x-2 py-1 md:order-3 md:col-span-3 md:ps-6"
+      class="ms-auto flex flex-none items-center gap-x-2 py-1 md:order-3 md:ps-6"
     >
       <button
         type="button"
-        class="inline-flex items-center gap-x-2 rounded-xl border border-transparent px-3 py-2 text-sm font-medium text-black transition hover:bg-neutral-100 disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:hover:bg-neutral-700"
+        class="inline-flex items-center gap-x-2 rounded-xl border border-transparent px-3 py-2 text-sm font-medium text-black transition hover:bg-neutral-100 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-300 dark:hover:bg-neutral-700"
         onclick="window.location.href='/search/'"
         aria-label="検索"
       >
@@ -68,7 +68,7 @@ const isArticle = /^\/posts\/[\w-]+\/$/.test(Astro.url.pathname);
       <div class="md:hidden">
         <button
           type="button"
-          class="hs-collapse-toggle flex size-[38px] items-center justify-center rounded-xl text-sm font-semibold text-black hover:bg-neutral-100 disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:hover:bg-neutral-700"
+          class="hs-collapse-toggle flex size-[38px] items-center justify-center rounded-xl text-sm font-semibold text-black hover:bg-neutral-100 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-300 dark:hover:bg-neutral-700"
           data-hs-collapse="#navbar-collapse-with-animation"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
@@ -83,7 +83,7 @@ const isArticle = /^\/posts\/[\w-]+\/$/.test(Astro.url.pathname);
 
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:order-2 md:col-span-6 md:block md:w-auto md:basis-auto"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:order-2 md:block md:w-auto md:flex-1 md:basis-auto"
     >
       <div
         class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-center md:gap-x-7 md:gap-y-0"

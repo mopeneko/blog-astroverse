@@ -74,7 +74,7 @@ export default {
       },
       {
         source: materialSymbols,
-        icons: ["info", "warning", "error"],
+        icons: ["info", "warning", "error", "update"],
       },
     ]),
   ],

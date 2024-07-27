@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import placeholder from "@/content/images/placeholder.png";
 
 export interface Props {
+  className?: string;
   src?: ImageMetadata;
   alt?: string;
   loading?: "eager" | "lazy";
@@ -11,10 +12,11 @@ export interface Props {
 
 const src = Astro.props.src ?? placeholder;
 const alt = Astro.props.alt ?? "";
-const { loading, fetchpriority } = Astro.props;
+const { loading, fetchpriority, className } = Astro.props;
 ---
 
 <Picture
+  class={className}
   formats={["avif"]}
   fallbackFormat="webp"
   src={src}

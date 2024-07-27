@@ -20,28 +20,30 @@ const basePath = "/page/";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="grid grid-cols-1">
-    <div class="col-span-1 mb-4">
-      {firstPagePosts.length > 0 && <HeroCard post={firstPagePosts[0]} />}
+  <div class="dark:text-gray-300">
+    <div class="grid grid-cols-1">
+      <div class="col-span-1 mb-4">
+        {firstPagePosts.length > 0 && <HeroCard post={firstPagePosts[0]} />}
+      </div>
+
+      <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-format="fluid"
+          data-ad-layout-key="-6f+ed+2i-1n-4w"
+          data-ad-client="ca-pub-3857753364740983"
+          data-ad-slot="1188694943"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <Card post={firstPagePosts[1]} />
+      </div>
     </div>
 
-    <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-6f+ed+2i-1n-4w"
-        data-ad-client="ca-pub-3857753364740983"
-        data-ad-slot="1188694943"></ins>
-      <script is:inline>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <Card post={firstPagePosts[1]} />
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {firstPagePosts.slice(2).map((post) => <Card post={post} />)}
     </div>
-  </div>
-
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-    {firstPagePosts.slice(2).map((post) => <Card post={post} />)}
   </div>
 </BaseLayout>
 

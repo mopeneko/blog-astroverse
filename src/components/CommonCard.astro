@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import MyPicture from "./MyPicture.astro";
+import IconText from "./IconText.svelte";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -10,17 +11,25 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<div
-  class="relative overflow-hidden rounded-xl bg-white transition-transform duration-500 hover:-translate-y-1 hover:scale-105 dark:bg-neutral-900"
->
+<div class="group relative overflow-hidden">
   <a href={`/posts/${post.slug}/`} class="block">
-    <MyPicture src={post.data.cover} alt={post.data.coverAlt} />
-    <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t p-5 md:p-6">
-      <div class="mt-16 flex items-center gap-4 text-xs text-white">
-        <span>{post.data.tags.join(" ")}</span>
-        <FormattedDate date={post.data.pubDate} />
+    <div class="aspect-video overflow-hidden rounded-md">
+      <MyPicture
+        className="translation duration-500 group-hover:scale-105"
+        src={post.data.cover}
+        alt={post.data.coverAlt}
+      />
+    </div>
+    <div>
+      <h2 class="mt-1 text-lg md:text-xl">{post.data.title}</h2>
+      <div class="text-xs">
+        <span
+          ><span class="material-symbols--update iconify align-text-bottom"
+          ></span>
+          <IconText><FormattedDate date={post.data.lastModified} /></IconText
+          ></span
+        >
       </div>
-      <h2 class="mt-2 text-lg font-bold text-white">{post.data.title}</h2>
     </div>
   </a>
 </div>
