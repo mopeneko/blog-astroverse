@@ -6,6 +6,7 @@ import iconParkSolid from "@iconify-json/icon-park-solid/icons.json";
 import tabler from "@iconify-json/tabler/icons.json";
 import ph from "@iconify-json/ph/icons.json";
 import materialSymbols from "@iconify-json/material-symbols/icons.json";
+import mdi from "@iconify-json/mdi/icons.json";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -76,6 +77,10 @@ export default {
         source: materialSymbols,
         icons: ["info", "warning", "error", "update"],
       },
+      {
+        source: mdi,
+        icons: ["table-of-contents"]
+      }
     ]),
   ],
 };
