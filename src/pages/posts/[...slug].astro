@@ -20,6 +20,8 @@ export async function getStaticPaths() {
 const post = Astro.props;
 const { Content, headings } = await post.render();
 const cover = post.data.cover ?? placeholder;
+
+const showTOC = headings.length !== 0;
 ---
 
 <BaseLayout
@@ -62,12 +64,15 @@ const cover = post.data.cover ?? placeholder;
         </script>
         {
           (() => {
-            if (headings.length === 0) {
+            if (!showTOC) {
               return;
             }
 
             return (
-              <div class="mt-5 border-2 border-dotted border-slate-700 px-4 py-2">
+              <div
+                id="toc"
+                class="mt-5 border-2 border-dotted border-slate-700 px-4 py-2"
+              >
                 <ul role="list" class="not-prose list-inside list-decimal">
                   {headings.map((heading) => {
                     if (heading.depth === 2) {
