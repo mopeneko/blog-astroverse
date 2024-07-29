@@ -21,6 +21,7 @@
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/material-symbols": "^1.1.85",
+    "@iconify-json/mdi": "^1.1.67",
     "@iconify-json/ph": "^1.1.13",
     "@iconify-json/tabler": "^1.1.116",
     "@preline/theme-switch": "^2.4.0",
