@@ -2,7 +2,11 @@
   "files.associations": {
     "*.mdx": "markdown"
   },
-  "[markdown]": {
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown][mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
       "comments": "on",
@@ -11,13 +15,7 @@
     },
     "editor.snippetSuggestions": "top"
   },
-  "[mdx]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "other": "on",
-      "comments": "on",
-      "strings": "on"
-    },
-    "editor.snippetSuggestions": "top"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
