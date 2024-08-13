@@ -7,7 +7,7 @@ import pagefind from "astro-pagefind";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
-import cloudflare from "@astrojs/cloudflare";
+import netlify from "@astrojs/netlify";
 import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
@@ -32,7 +32,14 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkModifiedTime],
-    rehypePlugins: [[rehypeExternalLinks, { rel: ["noopener", "noreferrer"] }]],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          rel: ["noopener", "noreferrer"],
+        },
+      ],
+    ],
   },
   integrations: [
     mdx(),
@@ -95,5 +102,5 @@ export default defineConfig({
     }),
     svelte(),
   ],
-  adapter: cloudflare(),
+  adapter: netlify(),
 });
